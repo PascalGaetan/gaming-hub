@@ -25,15 +25,6 @@ function NavBar() {
                 Home
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link disabled">Disabled</a>
-            </li>
           </ul>
           <form className="d-flex" role="search">
             <input type="text" className="form-control me-2" />

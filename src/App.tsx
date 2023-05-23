@@ -1,19 +1,18 @@
-import NavBar from "./components/NavBar"
-import GameService from "./components/services/game-service"
+import NavBar from "./components/NavBar";
+import GameService from "./services/game-service";
 
 function App() {
-
   return (
     <div className="container">
-      <NavBar/>
+      <NavBar />
       <div className="row">
         <div className="col-sm-4">Aside</div>
         <div className="col-sm-8">
-          <GameService/>
+          <GameService />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
