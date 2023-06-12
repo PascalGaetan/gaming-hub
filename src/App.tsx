@@ -9,7 +9,7 @@ function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null)
   return (
     <>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row mb-5">
           <NavBar />
         </div>
