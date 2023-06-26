@@ -1,7 +1,10 @@
-interface Platform {
+export interface Platform {
   id: number;
   slug: string;
   name: string;
 }
 
-export default Platform;
+export interface PlatformList {
+  count: number;
+  results: Platform[]
+}

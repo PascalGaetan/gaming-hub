@@ -3,12 +3,13 @@ import GameCard from "./components/GameCard";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import Genre from "./models/Genre";
+import PlatformSelector from "./components/PlatformSelector";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   return (
     <>
-      <div className="container-fluid">
+      <div className="container">
         <div className="row mb-5">
           <NavBar />
         </div>
@@ -17,6 +18,9 @@ function App() {
             <GenreList onSelectedGenre={(genre) => setSelectedGenre(genre)} />
           </div>
           <div className="col-sm-10">
+            <div className="mb-2">
+              <PlatformSelector />
+            </div>            
             <div className="row">
               <GameCard selectedGenre={selectedGenre} />
             </div>
