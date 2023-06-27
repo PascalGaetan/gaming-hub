@@ -4,9 +4,11 @@ import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import Genre from "./models/Genre";
 import PlatformSelector from "./components/PlatformSelector";
+import { Platform } from "./models/Platform";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null)
   return (
     <>
       <div className="container">
@@ -19,10 +21,10 @@ function App() {
           </div>
           <div className="col-sm-10">
             <div className="mb-2">
-              <PlatformSelector />
+              <PlatformSelector onSelectPLatform={(platform) => setSelectedPlatform(platform)}/>
             </div>            
             <div className="row">
-              <GameCard selectedGenre={selectedGenre} />
+              <GameCard selectedGenre={selectedGenre} selectedPlatform={selectedPlatform}/>
             </div>
           </div>
         </div>

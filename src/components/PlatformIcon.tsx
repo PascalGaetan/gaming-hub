@@ -11,7 +11,7 @@ import {
 import { SiNintendo } from "react-icons/si";
 import { MdPhoneIphone } from "react-icons/md";
 import { IconType } from "react-icons/lib";
-import Platform from "../models/Platform";
+import {Platform} from "../models/Platform";
 import { Icon } from "@chakra-ui/react";
 
 interface Props {
@@ -33,7 +33,7 @@ function PlatformIcon({ platforms }: Props) {
   }
   return (
     <>
-      {platforms.map(platform => <Icon as={iconMap[platform.slug]}/>)}
+      {platforms.map(platform => <Icon key={platform.id} as={iconMap[platform.slug]}/>)}
     </>
     
   )
