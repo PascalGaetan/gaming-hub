@@ -21,15 +21,17 @@ function PlatformSelector({ onSelectPLatform, selectedPLatform }: Props) {
     <>
       {error && <Text>{error}</Text>}
       <Menu>
-        <MenuButton
-          as={Button}
-          rightIcon={<BiChevronDownCircle />}
-        >
-          {selectedPLatform?.name|| 'Platforms'}
+        <MenuButton as={Button} rightIcon={<BiChevronDownCircle />}>
+          {selectedPLatform?.name || "Platforms"}
         </MenuButton>
         <MenuList>
           {platforms.map((platform) => (
-            <MenuItem onClick={() => onSelectPLatform(platform)} key={platform.id}>{platform.name}</MenuItem>
+            <MenuItem
+              onClick={() => onSelectPLatform(platform)}
+              key={platform.id}
+            >
+              {platform.name}
+            </MenuItem>
           ))}
         </MenuList>
       </Menu>
