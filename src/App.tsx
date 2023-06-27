@@ -11,7 +11,7 @@ function App() {
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null)
   return (
     <>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row mb-5">
           <NavBar />
         </div>
@@ -21,7 +21,7 @@ function App() {
           </div>
           <div className="col-sm-10">
             <div className="mb-2">
-              <PlatformSelector onSelectPLatform={(platform) => setSelectedPlatform(platform)}/>
+              <PlatformSelector selectedPLatform={selectedPlatform} onSelectPLatform={(platform) => setSelectedPlatform(platform)}/>
             </div>            
             <div className="row">
               <GameCard selectedGenre={selectedGenre} selectedPlatform={selectedPlatform}/>

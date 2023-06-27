@@ -12,9 +12,10 @@ import { Platform } from "../models/Platform";
 
 interface Props {
   onSelectPLatform: (platform: Platform) => void;
+  selectedPLatform: Platform | null;
 }
 
-function PlatformSelector({ onSelectPLatform }: Props) {
+function PlatformSelector({ onSelectPLatform, selectedPLatform }: Props) {
   const { platforms, error } = PlatformService();
   return (
     <>
@@ -24,7 +25,7 @@ function PlatformSelector({ onSelectPLatform }: Props) {
           as={Button}
           rightIcon={<BiChevronDownCircle />}
         >
-          Actions
+          {selectedPLatform?.name|| 'Platforms'}
         </MenuButton>
         <MenuList>
           {platforms.map((platform) => (
