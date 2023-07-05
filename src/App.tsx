@@ -9,6 +9,8 @@ import { HStack } from "@chakra-ui/react";
 import SortSelector from "./components/SortSelector";
 
 function App() {
+  const [selectedOrder, setSelectedOrder] = useState<string>('');
+
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
     null
@@ -30,13 +32,14 @@ function App() {
                   selectedPLatform={selectedPlatform}
                   onSelectPLatform={(platform) => setSelectedPlatform(platform)}
                 />
-                <SortSelector />
+                <SortSelector onSelectOrderBy={(selectedOrder) => setSelectedOrder(selectedOrder)}/>
               </HStack>
             </div>
             <div className="row">
               <GameCard
                 selectedGenre={selectedGenre}
                 selectedPlatform={selectedPlatform}
+                ordering={selectedOrder}
               />
             </div>
           </div>

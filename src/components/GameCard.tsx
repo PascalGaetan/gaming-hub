@@ -7,10 +7,11 @@ import { Platform } from "../models/Platform";
 interface Props {
   selectedGenre: Genre | null;
   selectedPlatform: Platform | null;
+  ordering : string
 }
 
-function GameCard({selectedGenre, selectedPlatform} : Props) {
-  const { games, error } = GameService(selectedGenre, selectedPlatform);
+function GameCard({selectedGenre, selectedPlatform, ordering} : Props) {
+  const { games, error } = GameService(selectedGenre, selectedPlatform, ordering);
   return (
     <>
       {error && <Text>{error}</Text>}
