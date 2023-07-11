@@ -1,11 +1,17 @@
 import logo from "../assets/logo.webp";
-import {Image} from '@chakra-ui/react';
-function NavBar() {
+import { Image } from "@chakra-ui/react";
+import SearchForm from "./SearchForm";
+
+interface Props {
+  onSearch: (input : string) => void;
+}
+
+function NavBar({onSearch} : Props) {  
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <Image src={logo} boxSize='60px'/>
+          <Image src={logo} boxSize="60px" />
         </a>
         <button
           className="navbar-toggler"
@@ -26,12 +32,7 @@ function NavBar() {
               </a>
             </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input type="text" className="form-control me-2" />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          <SearchForm onSearch={onSearch} />
         </div>
       </div>
     </nav>

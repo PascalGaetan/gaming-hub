@@ -10,7 +10,7 @@ import SortSelector from "./components/SortSelector";
 
 function App() {
   const [selectedOrder, setSelectedOrder] = useState<string>('');
-
+  const [selectSearch, setSelectSearch] = useState<string>('');
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
     null
@@ -19,7 +19,7 @@ function App() {
     <>
       <div className="container-fluid">
         <div className="row mb-5">
-          <NavBar />
+          <NavBar onSearch={(input) => setSelectSearch(input)}/>
         </div>
         <div className="row">
           <div className="col-sm-2">
@@ -40,6 +40,7 @@ function App() {
                 selectedGenre={selectedGenre}
                 selectedPlatform={selectedPlatform}
                 ordering={selectedOrder}
+                search={selectSearch}
               />
             </div>
           </div>

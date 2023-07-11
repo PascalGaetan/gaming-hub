@@ -9,7 +9,8 @@ import { Platform } from "../models/Platform";
 function GameService(
   selectedGenre: Genre | null,
   selectedPlatform: Platform | null,
-  orderBy : string
+  orderBy: string | null,
+  search : string | null
 ) {
   const [games, setGames] = useState<Game[]>([]);
   const [error, setError] = useState("");
@@ -18,7 +19,7 @@ function GameService(
     const controller = new AbortController();
     apiClient
       .get<ListOfGame>("/games", {
-        params: { genres: selectedGenre?.id, parent_platforms: selectedPlatform?.id, ordering : orderBy },
+        params: { genres: selectedGenre?.id, parent_platforms: selectedPlatform?.id, ordering : orderBy, search: search},
       })
       .then((res) => setGames(res.data.results))
       .catch((err) => {
@@ -27,7 +28,7 @@ function GameService(
       });
 
     return () => controller.abort();
-  }, [orderBy, selectedGenre?.id, selectedPlatform?.id]);
+  }, [orderBy, search, selectedGenre?.id, selectedPlatform?.id]);
 
   return { games, error };
 }
