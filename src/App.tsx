@@ -10,7 +10,7 @@ import SortSelector from "./components/SortSelector";
 
 function App() {
   const [selectedOrder, setSelectedOrder] = useState<string>('');
-  const [selectSearch, setSelectSearch] = useState<string>('');
+  const [searchInput, setSelectSearch] = useState<string>('');
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
     null
@@ -40,7 +40,7 @@ function App() {
                 selectedGenre={selectedGenre}
                 selectedPlatform={selectedPlatform}
                 ordering={selectedOrder}
-                search={selectSearch}
+                search={searchInput}
               />
             </div>
           </div>
